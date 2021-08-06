@@ -35,60 +35,54 @@ public class Produtos {
 	@JsonIgnoreProperties("produtos")
 	private Categoria categoria; 			//O tipo dado deve ser o mesmo nome da classe que eu quero relacionar 
 
-	
-											//Não esquecer dos getters and setters da categoria
-	/**
-	 * @return the id
-	 */
+	@ManyToOne 								
+	@JsonIgnoreProperties("produtos")
+	private Usuario usuario;
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public long getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the nome
-	 */
 	public String getNome() {
 		return nome;
 	}
 
-	/**
-	 * @param nome the nome to set
-	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	/**
-	 * @return the preco
-	 */
+	
 	public double getPreco() {
 		return preco;
 	}
 
-	/**
-	 * @param preco the preco to set
-	 */
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 
-	/**
-	 * @return the disponivel
-	 */
 	public boolean isDisponivel() {
 		return disponivel;
 	}
 
-	/**
-	 * @param disponivel the disponivel to set
-	 */
 	public void setDisponivel(boolean disponivel) {
 		this.disponivel = disponivel;
 	}
